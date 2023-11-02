@@ -60,7 +60,9 @@ const stackNavOpts: StackNavigationOptions = {
 
 const DrawerNavigator = () => {
   return (
-    <Drawer.Navigator screenOptions={drawerNavOpts}>
+    <Drawer.Navigator
+      initialRouteName={JOBS_SCREEN}
+      screenOptions={drawerNavOpts}>
       <Drawer.Screen name={JOBS_SCREEN} component={Jobs} />
       <Drawer.Screen name={FAVORITES_SCREEN} component={Favorites} />
       <Drawer.Screen name={APPLICATIONS_SCREEN} component={Applications} />
