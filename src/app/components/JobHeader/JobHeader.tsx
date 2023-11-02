@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import {useAppSelector} from '../../../redux/hooks';
-import {selectJobDetail} from '../../../redux/jobs/selectors';
+import {selectJobDetail} from '../../../redux/selectors';
 import styles from './JobHeader.style';
 
 const JobHeader = () => {

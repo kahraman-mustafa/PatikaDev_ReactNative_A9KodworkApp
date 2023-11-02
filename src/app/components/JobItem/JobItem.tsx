@@ -1,11 +1,8 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {useAppSelector} from '../../../redux/hooks';
-import {
-  selectApplications,
-  selectFavorites,
-} from '../../../redux/jobs/selectors';
 import {_Job} from '../../../redux/jobs/types';
+import {selectApplications, selectFavorites} from '../../../redux/selectors';
 import Badges from '../Badges';
 import styles from './JobItem.style';
 

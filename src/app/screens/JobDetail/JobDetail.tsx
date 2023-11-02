@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
-import {selectJobDetail} from '../../../redux/jobs/selectors';
 import {setJobDetail} from '../../../redux/jobs/slice';
+import {selectJobDetail} from '../../../redux/selectors';
 import JobContent from '../../components/JobContent';
 import JobFooter from '../../components/JobFooter';
 import JobHeader from '../../components/JobHeader';

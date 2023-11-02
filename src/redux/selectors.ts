@@ -1,4 +1,4 @@
-import {RootState} from '../store';
+import {RootState} from './store';
 
 export const selectJobs = (state: RootState) => state.jobs.items;
 export const selectIsLoadingJobs = (state: RootState) => state.jobs.isLoading;

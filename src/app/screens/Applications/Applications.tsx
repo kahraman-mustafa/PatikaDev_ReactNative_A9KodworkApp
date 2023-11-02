@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {FlatList, SafeAreaView} from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
-import {selectApplications} from '../../../redux/jobs/selectors';
 import {setJobDetail} from '../../../redux/jobs/slice';
 import {_Job} from '../../../redux/jobs/types';
+import {selectApplications} from '../../../redux/selectors';
 import {DRAWER, JOBS_SCREEN, JOB_DETAIL_SCREEN} from '../../../router/routes';
 import ApplicationItem from '../../components/ApplicationItem';
 import styles from './Applications.style';

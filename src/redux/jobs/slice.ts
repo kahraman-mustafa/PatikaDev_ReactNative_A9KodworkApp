@@ -1,5 +1,6 @@
 // DUCKS pattern
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
+import {STATE_JOBS} from '../constants';
 import {getJobsAsync} from './services';
 import {_Job, _Jobs, _idJob} from './types';
 
@@ -13,7 +14,7 @@ const initialState: _Jobs = {
 };
 
 const jobsSlice = createSlice({
-  name: 'jobs',
+  name: STATE_JOBS,
   initialState,
   reducers: {
     setJobDetail: (state, action: PayloadAction<_Job | null>) => {

@@ -2,16 +2,16 @@ import React from 'react';
 import {View} from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
 import {
-  selectApplications,
-  selectFavorites,
-  selectJobDetail,
-} from '../../../redux/jobs/selectors';
-import {
   addFavorite,
   removeFavorite,
   revertApplication,
   submitApplication,
 } from '../../../redux/jobs/slice';
+import {
+  selectApplications,
+  selectFavorites,
+  selectJobDetail,
+} from '../../../redux/selectors';
 import Button from '../Button';
 import styles from './JobFooter.style';
 

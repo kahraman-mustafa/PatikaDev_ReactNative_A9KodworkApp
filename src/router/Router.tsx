@@ -19,7 +19,7 @@ import {
   selectApplications,
   selectFavorites,
   selectJobDetail,
-} from '../redux/jobs/selectors';
+} from '../redux/selectors';
 import Colors from '../theme/Color';
 import {
   APPLICATIONS_SCREEN,

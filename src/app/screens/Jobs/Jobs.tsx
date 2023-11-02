@@ -8,14 +8,14 @@ import {
   Text,
 } from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
+import {getJobsAsync} from '../../../redux/jobs/services';
+import {setJobDetail} from '../../../redux/jobs/slice';
+import {_Job} from '../../../redux/jobs/types';
 import {
   selectErrorJobs,
   selectIsLoadingJobs,
   selectJobs,
-} from '../../../redux/jobs/selectors';
-import {getJobsAsync} from '../../../redux/jobs/services';
-import {setJobDetail} from '../../../redux/jobs/slice';
-import {_Job} from '../../../redux/jobs/types';
+} from '../../../redux/selectors';
 import {JOB_DETAIL_SCREEN} from '../../../router/routes';
 import JobItem from '../../components/JobItem';
 import Pager from '../../components/Pager';

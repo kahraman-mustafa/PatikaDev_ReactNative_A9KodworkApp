@@ -3,12 +3,13 @@ import {View, useWindowDimensions} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import RenderHtml from 'react-native-render-html';
 import {useAppSelector} from '../../../redux/hooks';
-import {selectJobDetail} from '../../../redux/jobs/selectors';
+import {selectJobDetail} from '../../../redux/selectors';
 import styles, {tagStyles} from './JobContent.style';
 
 const JobContent = props => {
   const jobDetail = useAppSelector(selectJobDetail);
 
+  // Clean unnecessary spaces, <br> tags, \r\n usages causes bad html view
   const prepareHtmlString: (
     htmlString?: string,
   ) => string | undefined = htmlString => {
