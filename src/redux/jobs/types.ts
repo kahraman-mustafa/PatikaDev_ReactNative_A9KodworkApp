@@ -42,6 +42,7 @@ export interface _Jobs {
   isLoading: boolean;
   error: any;
   jobDetail: _Job | null;
+  page: number;
 }
 
 // interface JobsState extends Array<_Job> {}

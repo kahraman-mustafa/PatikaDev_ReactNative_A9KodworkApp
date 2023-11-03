@@ -7,3 +7,4 @@ export const selectJobDetail = (state: RootState) => state.jobs.jobDetail;
 export const selectFavorites = (state: RootState) => state.jobs.favorites;
 export const selectApplications = (state: RootState) => state.jobs.applications;
 export const selectConnectionState = (state: RootState) => state.connection;
+export const selectPage = (state: RootState) => state.jobs.page;

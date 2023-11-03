@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -9,12 +9,13 @@ import {
 } from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
 import {getJobsAsync} from '../../../redux/jobs/services';
-import {setJobDetail} from '../../../redux/jobs/slice';
+import {setJobDetail, setPage} from '../../../redux/jobs/slice';
 import {_Job} from '../../../redux/jobs/types';
 import {
   selectErrorJobs,
   selectIsLoadingJobs,
   selectJobs,
+  selectPage,
 } from '../../../redux/selectors';
 import {JOB_DETAIL_SCREEN} from '../../../router/routes';
 import JobItem from '../../components/JobItem';
@@ -25,7 +26,7 @@ const Jobs = ({navigation}) => {
   const isLoading = useAppSelector(selectIsLoadingJobs);
   const error = useAppSelector(selectErrorJobs);
   const jobs = useAppSelector(selectJobs);
-  const [page, setPage] = useState(1);
+  const page = useAppSelector(selectPage);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -53,8 +54,8 @@ const Jobs = ({navigation}) => {
     return () => backHandler.remove();
   }, []);
 
-  const handleNextPage = () => setPage(page + 1);
-  const handlePreviousPage = () => setPage(page - 1);
+  const handleNextPage = () => dispatch(setPage(page + 1));
+  const handlePreviousPage = () => dispatch(setPage(page - 1));
 
   const handlePressJobItem = (item: _Job) => {
     dispatch(setJobDetail(item));

@@ -11,6 +11,7 @@ const initialState: _Jobs = {
   isLoading: false,
   error: null,
   jobDetail: null,
+  page: 1,
 };
 
 const jobsSlice = createSlice({
@@ -34,19 +35,29 @@ const jobsSlice = createSlice({
         a => a.id !== action.payload,
       );
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload;
+    },
   },
   extraReducers: builder => {
     // get jobs
     builder.addCase(getJobsAsync.pending, state => {
       state.isLoading = true;
+      state.error = null;
+      state.items = [];
     });
     builder.addCase(getJobsAsync.fulfilled, (state, action) => {
       // action return type is jobs: _Job[] <=== action.payload.results;
       state.isLoading = false;
+      state.error = null;
       state.items = action.payload.results;
+      console.log(
+        `Async results: ${action.payload.results.map((r: _Job) => r.name)}`,
+      );
     });
     builder.addCase(getJobsAsync.rejected, (state, action) => {
       state.isLoading = false;
+      state.items = [];
       state.error = action.error.message;
     });
   },
@@ -59,4 +70,5 @@ export const {
   removeFavorite,
   submitApplication,
   revertApplication,
+  setPage,
 } = jobsSlice.actions;
