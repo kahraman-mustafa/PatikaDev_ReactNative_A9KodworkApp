@@ -1,8 +1,37 @@
+# PatikaDev - React Native Kursu - Redux Ders Sonu Kendin Yap Projesi
+
+PatikaDev ReactNative kursu 7. dersi redux kapsamında yaptığım ders sonu kendin yap çalışmasıdır. Muse websitesinin iş ilanlarını paylaştığı API'ndan faydalanılarak geliştirilen, güncel iş ilanlarının listeletilmesi, favoriye ekleme, başvuru yapma ve bunların offline olarak bir dahaki açılışta listelenmesi gibi bir takım fonksiyonlar/özellikler barındıran bir çalışmadır.
+
+![KODWORK React Native Uygulaması](https://raw.githubusercontent.com/kahraman-mustafa/PatikaDev_ReactNative_A9KodworkApp/master/A9KodworkApp.gif)
+
+- State management: **@reduxjs/toolkit, createAsyncThunk**
+- Figma ile tasarım,
+- **Colors.ts** dosyası ile özel tema
+- Özelleştirilmiş navigasyon başlıkları/ikonları
+- **react-native-render-html** ile static HTML rendering,
+- **Regex** ile HTML pre-processing,
+- Vscode-eslint-prettier settings ayarları özelleştirme,
+- **Drawer & Stack nested navigation**
+- **Vector icons**
+- **Navigation listener** (beforeRemove)
+- Custom **back button handling** (Android)
+- Persisted state/offline storage: **redux-persist**, **asyncstorage**
+- Network handling: **net-info**, custom hook **useNetworkListener**
+- Notification on screen: **Toast** component
+
+PatikaDev Redux kursunun ToDo App dahil ilk üç dersi tüm uygulamalar yapılarak ReactNative kursunda anlatıldığı haline göre güncellenmiş olan reduxjs/toolkit ve ilave olarak createAsyncThunk kullanımı pratik olarak öğrenilmiş ve bu uygulamada pekiştirilmiştir.
+
+Baştan sona Figma ile tasarım, Colors.ts gibi bir dosyadan özelleştirilmiş renk-tema kullanımı, özelleştirilmiş navigasyon başlıkları/ikonları, reduxjs/toolkit ile state management, createAsyncThunk kullanımı, react-native-render-html ile statik HTML rendering, regex ile HTML pre-processing, vscode-eslint-prettier settings ayarları özelleştirme, nested navigation kullanımı, vector icons kullanımı, navigation listener kullanımı (beforeRemove) ile navigasyon geçişlerin yakalama ve bu aşamada işlemler gerçekleştirme, custom back button handling ile Android'de uygulama çıkışı öncesi uyarı gösterimi.
+
+Uygulamaya redux-persist kütüphanesi ile offline çalışabilme kabiliyeti kazandırıldı. Jobs state içindeki favorites ve applications stateleri reducers içindeki persistedReducer'a whitelist olarak tanımlanıp AsyncStorage kütüphanesi de storage olarak ayarlanıp, persist etmeleri yani uygulama kapanıp açılldıktan sonra da son değerleri ile açılmaları sağlandı. redux-persist kütüphanesi expire, eas security gibi ilave kütüphanelerle de desteklenebilir ileride.
+
+Net-info kütüphanesi ile connection listener özellikleri eklendi. Listener kod bloğu utils içine useEffect ile ilk açılışta subscripe edecek ve kapanırkan unsubscribe edecek şekilde useNetworkListener olarak eklendi, Router.tsx içinde import edildi. Bağlantı özelliklerinde değişiklikler olduğunda 3. parti Toast componenti kullanılarak bildirim verilmesi sağlandı. Jobs apiden çekilmeden internet bağlantısı kesilirse/yoksa ve sonradan bağlantı kurulursa bu durumda apiden veri çekilmesini tetiklemek için useNetworkListener içine gerekli mantık kontrol yapısı eklendi. Gösterimdeki hataları gidermek için extraReducer içinde gerekli düzenlemeler yapıldı. Son olarak Jobs sayfasında seçilen page bilgisi jobs staten içine eklenerek offlinedan online geçilirken yapılan api tetiklemesinde o anki page değerinin kullanılması sağlandı. Page persist olmayan bir yapıda tutuldu.
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
