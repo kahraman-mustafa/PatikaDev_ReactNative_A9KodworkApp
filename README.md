@@ -1,6 +1,6 @@
 # PatikaDev - React Native Kursu - Redux Ders Sonu Kendin Yap Projesi
 
-PatikaDev ReactNative kursu 7. dersi redux kapsamında yaptığım ders sonu kendin yap çalışmasıdır. Muse websitesinin iş ilanlarını paylaştığı API'ndan faydalanılarak geliştirilen, güncel iş ilanlarının listeletilmesi, favoriye ekleme, başvuru yapma ve bunların offline olarak bir dahaki açılışta listelenmesi gibi bir takım fonksiyonlar/özellikler barındıran bir çalışmadır.
+PatikaDev ReactNative kursu 7. dersi redux kapsamında yaptığım ders sonu kendin yap çalışmasıdır. TheMuse websitesinin iş ilanlarını paylaştığı [API'ndan](https://www.themuse.com/developers/api/v2) faydalanılarak geliştirilen, güncel iş ilanlarının listeletilmesi, favoriye ekleme, başvuru yapma ve bunların offline olarak bir dahaki açılışta listelenmesi gibi bir takım fonksiyonlar/özellikler barındıran bir çalışmadır.
 
 ![KODWORK React Native Uygulaması](https://raw.githubusercontent.com/kahraman-mustafa/PatikaDev_ReactNative_A9KodworkApp/master/A9KodworkApp.gif)
 
