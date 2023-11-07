@@ -1,17 +1,18 @@
 // components/LoadingAnimation.js
 
-import LottieView from 'lottie-react-native';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 
-const LoadingAnimation = () => {
+const LoadingAnimation = ({message}: {message: string}) => {
   return (
     <View style={styles.container}>
-      <LottieView
-        source={require('../../assets/launch_rocket.json')} // Replace with your animation JSON file
+      {/* <LottieView
+        source={require('../../assets/db_loading.json')} // Replace with your animation JSON file
         autoPlay
         loop
-      />
+      /> */}
+      <ActivityIndicator size="large" color="red" />
+      <Text>{message}</Text>
     </View>
   );
 };

@@ -71,19 +71,22 @@ const useNetworkListener = () => {
         Toast.show({
           type: 'success',
           text1: 'Device is connected to internet!',
-          text2: msgTextOnline,
+          visibilityTime: 1500,
+          // text2: msgTextOnline,
         });
       } else if (connection.isConnected) {
         Toast.show({
           type: 'info',
           text1: 'Connected to a network but internet not available!',
-          text2: msgTextOnline,
+          visibilityTime: 1500,
+          // text2: msgTextOnline,
         });
       } else {
         Toast.show({
           type: 'error',
           text1: 'No network connection!',
-          text2: msgTextOnline,
+          visibilityTime: 1500,
+          // text2: msgTextOnline,
         });
       }
 

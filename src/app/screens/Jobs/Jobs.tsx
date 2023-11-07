@@ -1,12 +1,5 @@
 import React, {useEffect} from 'react';
-import {
-  ActivityIndicator,
-  Alert,
-  BackHandler,
-  FlatList,
-  SafeAreaView,
-  Text,
-} from 'react-native';
+import {Alert, BackHandler, FlatList, SafeAreaView, Text} from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
 import {getJobsAsync} from '../../../redux/jobs/services';
 import {setJobDetail, setPage} from '../../../redux/jobs/slice';
@@ -19,6 +12,7 @@ import {
 } from '../../../redux/selectors';
 import {JOB_DETAIL_SCREEN} from '../../../router/routes';
 import JobItem from '../../components/JobItem';
+import LoadingAnimation from '../../components/LoadingAnimation';
 import Pager from '../../components/Pager';
 import styles from './Jobs.style';
 
@@ -74,11 +68,12 @@ const Jobs = ({navigation}) => {
         onPressLeft={handlePreviousPage}
       />
       {isLoading ? (
-        <ActivityIndicator
-          style={styles.activity_indicator}
-          size="large"
-          color="red"
-        />
+        // <ActivityIndicator
+        //   style={styles.activity_indicator}
+        //   size="large"
+        //   color="red"
+        // />
+        <LoadingAnimation message="Loading Jobs" />
       ) : error ? (
         <Text>ERROR: {error?.toString()}</Text>
       ) : (

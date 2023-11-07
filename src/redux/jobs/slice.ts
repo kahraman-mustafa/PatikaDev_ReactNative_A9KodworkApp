@@ -51,9 +51,9 @@ const jobsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.items = action.payload.results;
-      console.log(
-        `Async results: ${action.payload.results.map((r: _Job) => r.name)}`,
-      );
+      // console.log(
+      //   `Async results: ${action.payload.results.map((r: _Job) => r.name)}`,
+      // );
     });
     builder.addCase(getJobsAsync.rejected, (state, action) => {
       state.isLoading = false;

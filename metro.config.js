@@ -9,7 +9,7 @@ const defaultConfig = getDefaultConfig(__dirname);
  */
 const config = {
   resolver: {
-    assetExts: [...defaultConfig.resolver.assetExts, 'lottie'],
+    assetExts: defaultConfig.resolver.assetExts,
   },
 };
 
